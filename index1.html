@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tặng Ebee - Đỗ Thị Ngọc Thu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Modal xác nhận hiển thị trước nội dung chính -->
+<div id="confirmModal" class="modal">
+  <div class="modal-content">
+    <p>Bạn là gì của Phú Hoàng?</p>
+    <input type="text" id="confirmInput" placeholder="Nhập dữ liệu vào đây...">
+    <button id="confirmBtn" class="button">Xác nhận</button>
+  </div>
+</div>
+
+
+<img class="facebook-avatar" src="avt.jpg" alt="Avatar">
+<div id="mainContent" class="container hidden">
+
+  <svg width="350" height="250">
+    <defs>
+      <!-- (1) Định nghĩa bộ lọc đổ bóng -->
+      <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="3" dy="3" stdDeviation="3" flood-color="#000" flood-opacity="0.3" />
+      </filter>
+      <!-- (2) Định nghĩa đường path để cắt ảnh (bông hoa) -->
+      <clipPath id="pathClip">
+        <!-- Center (70,80), radius = 30 -->
+        <path d="M70,80
+                 m-30,0
+                 a30,30 0 1,0 60,0
+                 a30,30 0 1,0 -60,0" />
+      </clipPath>
+    </defs>
+
+    <!-- (3) Gom tất cả vào 1 nhóm để cùng nhận hiệu ứng đổ bóng -->
+    <g filter="url(#dropShadow)">
+      <!-- (4) Vẽ hình chữ nhật làm khung nền trắng -->
+      <rect x="22" y="30" width="325" height="100"
+            fill="#fff"
+            rx="10" ry="10"
+            stroke="#d81b60"
+            stroke-width="2" />
+      <!-- (5) Ảnh được cắt theo hình bông hoa -->
+      <image x="30" y="40" width="80" height="80"
+             clip-path="url(#pathClip)"
+             xlink:href="avt.jpg"
+             href="avt.jpg" />
+      <!-- (6) Vẽ lại đường path viền hoa (trùng với clipPath) để thấy viền -->
+      <path d="M70,80
+               m-30,0
+               a30,30 0 1,0 60,0
+               a30,30 0 1,0 -60,0"
+            fill="none"
+            stroke="#d81b60"
+            stroke-width="2" />
+      <!-- (7) Thêm văn bản bên cạnh -->
+      <text x="115" y="70"
+            font-size="17" font-weight="bold"
+            fill="#000">
+        wealess
+      </text>
+      <text x="120" y="90"
+            font-size="13"
+            fill="#000">
+        Một chút tấm lòng muốn gửi đến em !!
+      </text>
+    </g>
+  </svg>
+
+  <!-- Nút hiển thị thư, ẩn đi ban đầu -->
+  <button id="revealBtn" class="button hidden">Nhấn để xem thư</button>
+
+  <!-- Nội dung thư gửi tặng, cũng ẩn đi ban đầu -->
+  <div id="message" class="message hidden">
+    <p>
+      Hôm nay là ngày 08/03/2025 là ngày Quốc Tế Phụ Nữ..<br>
+      anh chúc ebeee của anh thật vui vẻ, hạnh phúc, cười nhiều hơn nhé, chúc cho em gặt hái được nhiều thành công và may mắn trong cuộc sống, bỏ qua những chuyện làm em buồn.
+      anh yeuuuu ebeee của anh nhieuuu lamm aaa <3
+    </p>
+    <br>
+    <!-- Div button cho phần quà -->
+    <div id="giftBtn1" class="gift-btn button" data-image="gift1.jpg">Phần quà thứ nhất</div>
+    <div id="giftBtn2" class="gift-btn button" data-image="gift2.jpg">Phần quà thứ hai</div>
+    <br>
+    <div id="giftBtn3" class="gift-btn button" data-image="gift3.jpg">Xem thêm</div><br>
+    <a href="index.html">Quay Lại</a>
+  </div>
+
+</div> <!-- End mainContent -->
+
+<!-- Modal hiển thị quà tặng (ẩn ban đầu) -->
+<div id="giftModal" class="modal hidden">
+  <div class="modal-content">
+    <span id="closeModal" class="close">&times;</span>
+    <img id="modalImage" src="" alt="Gift Image">
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

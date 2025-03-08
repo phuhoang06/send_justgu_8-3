@@ -1,0 +1,135 @@
+/* Global styling */
+body {
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+    position: relative;
+}
+
+/* Container chứa nội dung chính */
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Các nút chung */
+.button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #d81b60;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.button:hover {
+    background: #ad1457;
+}
+
+/* Phần hiển thị nội dung thư */
+.message {
+    margin-top: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+}
+
+/* Ẩn đi */
+.hidden {
+    display: none !important;
+}
+
+/* Modal chung (dùng cho cả xác nhận và quà tặng) */
+.modal {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CSS cho modal xác nhận */
+#confirmModal .modal-content {
+    background: #fff;              /* Nền trắng */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);  /* Hiệu ứng nổi */
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+/* CSS cho modal quà tặng (nội dung modal chung) */
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    max-width: 600px;
+    width: 80%;
+    max-height: 80vh;
+    overflow: hidden;
+}
+
+/* Nút đóng modal */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Ảnh trong modal */
+.modal-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* CSS cho input của modal xác nhận */
+#confirmInput {
+    width: 80%;
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* (Tuỳ chọn) Avatar hiển thị giống Facebook */
+.facebook-avatar {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    object-fit: cover;
+    z-index: 1000;
+}
